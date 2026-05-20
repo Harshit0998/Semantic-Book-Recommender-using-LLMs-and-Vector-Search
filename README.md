@@ -1,29 +1,80 @@
-# Build a Semantic Book Recommender with LLMs – Full Course
+This project builds an intelligent semantic book recommendation system using LLMs, embeddings, vector databases, and emotion analysis.
+Instead of keyword search, users can query in natural language like:
 
-This repo contains all of the code to complete the freeCodeCamp course, "Build a Semantic Book Recommender with LLMs – Full Course". There are five components to this tutorial:
-* Text data cleaning (code in the notebook `data-exploration.ipynb`)
-* Semantic (vector) search and how to build a vector database (code in the notebook `vector-search.ipynb`). This allows users to find the most similar books to a natural language query (e.g., "a book about a person seeking revenge").
-* Doing text classification using zero-shot classification in LLMs (code in the notebook `text-classification.ipynb`). This allows us to classify the books as "fiction" or "non-fiction", creating a facet that users can filter the books on. 
-* Doing sentiment analysis using LLMs and extracting the emotions from text (code in the notebook `sentiment-analysis.ipynb`). This will allow users to sort books by their tone, such as how suspenseful, joyful or sad the books are.
-* Creating a web application using Gradio for users to get book recommendations (code in the file `gradio-dashboard.py`).
+“A story about revenge and betrayal”
+“A joyful non-fiction book about personal growth”
 
-This project was initially created in Python 3.11. In order to run the project, the following dependencies are required:
-* [kagglehub](https://pypi.org/project/kagglehub/)
-* [pandas](https://pypi.org/project/pandas/)
-* [matplotlib](https://pypi.org/project/matplotlib/)
-* [seaborn](https://pypi.org/project/seaborn/)
-* [python-dotenv](https://pypi.org/project/python-dotenv/)
-* [langchain-community](https://pypi.org/project/langchain-community/)
-* [langchain-opencv](https://pypi.org/project/langchain-opencv/)
-* [langchain-chroma](https://pypi.org/project/langchain-chroma/)
-* [transformers](https://pypi.org/project/transformers/)
-* [gradio](https://pypi.org/project/gradio/)
-* [notebook](https://pypi.org/project/notebook/)
-* [ipywidgets](https://pypi.org/project/ipywidgets/)
+and receive highly relevant book recommendations filtered by category and emotional tone.
 
-A requirements.txt file containing all the project dependencies is provided as part of this repo.
+The system combines text cleaning, vector search, zero-shot classification, sentiment analysis, and a Gradio web app into a complete end-to-end ML application.
 
-In order to create your vector database, you'll need to create a .env file in your root directory containing your OpenAI API key. Instructions on how to do this are part of the tutorial.
+Features
+ Text data cleaning and preprocessing of book descriptions
+ Semantic (vector) search using OpenAI embeddings and ChromaDB
+ Zero-shot classification to label books as Fiction / Non-Fiction
+ Emotion & sentiment extraction from descriptions (joy, fear, anger, sadness, surprise)
+ Interactive Gradio dashboard for real-time recommendations
+ Project Structure
+File	Description
+data-exploration.ipynb	Text cleaning, preprocessing, and dataset preparation
+vector-search.ipynb	Creating embeddings and building the Chroma vector database
+text-classification.ipynb	Zero-shot classification using LLMs
+sentiment-analysis.ipynb	Emotion extraction and sentiment scoring using LLMs
+gradio-dashboard.py	Web app for semantic book recommendations
+ How It Works
+Book descriptions are cleaned and processed.
+OpenAI embeddings are created for each book description.
+Embeddings are stored in a Chroma vector database.
+Users enter a natural language query.
+The system performs semantic similarity search.
+Results are filtered by:
+Category (Fiction / Non-Fiction)
+Emotional tone (Happy, Suspenseful, Sad, Angry, Surprising)
+Results are displayed in a Gradio dashboard with book covers and summaries.
+ Tech Stack
+Python 3.11
+Pandas, Matplotlib, Seaborn
+LangChain
+OpenAI Embeddings
+ChromaDB (Vector Database)
+Transformers (Zero-shot classification)
+Gradio (Web UI)
+ Setup Instructions
+1️⃣ Clone the repository
+git clone <your-repo-link>
+cd <repo-name>
+2️⃣ Install dependencies
+pip install -r requirements.txt
+3️⃣ Add OpenAI API key
 
-The data for this project can be downloaded from Kaggle. Instructions on how to do this are also in the repo.
+Create a .env file in the root directory:
 
+OPENAI_API_KEY=your_key_here
+4️⃣ Download dataset from Kaggle
+
+Follow the instructions in the notebooks to download and prepare the dataset using kagglehub.
+
+5️⃣ Build the vector database
+
+Run:
+
+data-exploration.ipynb
+vector-search.ipynb
+text-classification.ipynb
+sentiment-analysis.ipynb
+6️⃣ Launch the web app
+python gradio-dashboard.py
+ Example Queries
+“A suspenseful mystery involving a detective”
+“A happy non-fiction book about success”
+“A sad story about war and loss”
+“A surprising sci-fi adventure”
+ Learning Outcomes
+
+This project demonstrates practical use of:
+
+Embeddings & vector similarity search
+LLM zero-shot classification
+Emotion mining from text
+Building end-to-end AI applications
+Deploying ML systems with user interfaces
