@@ -56,11 +56,3 @@ The project combines **text preprocessing**, **vector search**, **zero-shot clas
 - Gradio (Web UI)
 
 ---
-
-## ⚙️ Setup Instructions
-
-### 1️⃣ Clone the repository
-
-```bash
-git clone <your-repo-link>
-cd <repo-name>
